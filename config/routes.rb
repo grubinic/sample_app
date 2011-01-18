@@ -1,7 +1,7 @@
 SampleApp::Application.routes.draw do
-
-  get "users/new"
-
+  #REST defined here - GET users/new, GET users/1, ..
+  resources :users
+  
   #custom routes  (match route to controller#acion)
   #named roots: about_path : '/about'
   match '/contact', :to => 'pages#contact'
