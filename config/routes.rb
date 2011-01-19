@@ -1,5 +1,5 @@
 SampleApp::Application.routes.draw do
-  #REST defined here - GET users/new, GET users/1, ..
+  #REST defined here - GET users/new, GET users/1, .. + named routes
   resources :users
   
   #custom routes  (match route to controller#acion)
@@ -11,6 +11,5 @@ SampleApp::Application.routes.draw do
 
   #root_path
   root :to => 'pages#home'
-
   
 end
