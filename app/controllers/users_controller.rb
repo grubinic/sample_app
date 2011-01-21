@@ -20,9 +20,11 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       # Handle a successful save.
+      sign_in(@user);
       #flash is a rails var (hash..)
       flash[:success] = "Welcome to the Sample App!"
       # redirect
+      #equiv. to GET user_path(user) - /users/id
       redirect_to @user
     else
       @user.password = ""
