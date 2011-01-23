@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110119202026
+# Schema version: 20110122230431
 #
 # Table name: users
 #
@@ -10,12 +10,15 @@
 #  updated_at         :datetime
 #  encrypted_password :string(255)
 #  salt               :string(255)
+#  admin              :boolean
 #
 
 class User < ActiveRecord::Base
+ 
   # trick -  VIRTUAL atribute password (not in db)
   attr_accessor :password
-  
+
+  #admin is not accessible!!! -> security
   attr_accessible :name, :email, :password, :password_confirmation
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
